@@ -1,0 +1,1039 @@
+00:00:00 - Michael:
+
+Already field, of course. I'm thinking like. there are some things with them also busy like in my mind from
+
+00:00:10 - You:
+
+mmm
+
+00:00:12 - Michael:
+
+How to say it's big big challenges in the Netherlands or in Europe as well.
+
+00:00:17 - You:
+
+Yeah.
+
+00:00:20 - Michael:
+
+It's not like a new new use case, but What I see is that many companies and organizations in Europe are like repeating themselves with special with the docker images. They create because There's a use case or there's a problem. What's the problem problem is that? images on the internet even from trusted suppliers are not Vocal images of course are not safe. why are they not safe or we don't know if they are safe because Many suppliers. They do not take the time to harden their images to make sure that there's nothing wrong in it and to give a good coverage on scans and stuff like that. So, I don't know if you have you know anything about the if you work with kubernetes.
+
+00:01:22 - You:
+
+Hmm. I I haven't worked with it, but I know how it works.
+
+00:01:27 - Michael:
+
+but Yeah, yeah, of course. So we have a Docker image and there are many vulnerability scanning tools.
+
+00:01:36 - You:
+
+Yes.
+
+00:01:37 - Michael:
+
+Many now comes to Fun Part vulnerability scanning tools. Most of them. They they do not really scan the whole Docker image to artifact note. They only can What's in the package manager? So so you you know, if you let's say if you need to install everything with the package manager, otherwise, it will not have a good coverage. cover. So the thing is many organizations do not know what they are pulling in. Because they let's say they do a skin with trivia or graph to scanning tools open source. They they get like, oh we have very low CVS and they immediately immediately think that their image is safe, but they have only scanned like 20 or 30 percent of the artifact.
+
+00:02:31 - You:
+
+hmm
+
+00:02:31 - Michael:
+
+What effect? Because now it comes to form the problem men the suppliers and organizations use do not use always use the package manager for installing. Their application dependencies and stuff like that.
+
+00:02:48 - You:
+
+When you say the packet manager you mean Ubuntu?
+
+00:02:51 - Michael:
+
+it's Yeah Ubuntu deviant. redhead you young apps that's
+
+00:02:56 - You:
+
+Yeah.
+
+00:02:59 - Michael:
+
+package manager and all the scanning tools always use the package manager
+
+00:03:03 - You:
+
+Yes.
+
+00:03:04 - Michael:
+
+first problem. So so we have not a good coverage. In that field like I mean covered.
+
+00:03:09 - You:
+
+Right because the way that they would
+
+00:03:10 - Michael:
+
+before
+
+00:03:11 - You:
+
+install it is how
+
+00:03:14 - Michael:
+
+They do let's say they build artifact and they want to have it in their base image Ubuntu again.
+
+00:03:21 - You:
+
+Yeah.
+
+00:03:23 - Michael:
+
+Anything mostly used to copy
+
+00:03:24 - You:
+
+Doesn't matter.
+
+00:03:26 - Michael:
+
+statement. In the docker file, so they copy the artifact in the image and also other stuff also. To to have it included in image so functionally it works. But security wise that's a big problem. Why because we
+
+00:03:44 - You:
+
+You just copied something from another Docker image. It affected can be a dependency. I've done a test with a very very vulnerable application. Like let's say if you look it up you will get enough CVS, but when I scan it when I used the copy statement in the image, then it will completely bypass every scanner. So no scanner things can find. That artifact and then so it's mostly supply chain security what we're talking about. But that's a big problem.
+
+00:04:18 - You:
+
+And can I ask something here? Because there's something that has come up multiple times so supply chain security. Today you just change you you get to a better tool you you get to see all the issues all the errors in your supply chain. What does that change because to I don't know. I'm just gonna make it them but if if you see oh, I have a thousand criticals across all of my All of the libraries that they use what you will do is say hmm. Okay, I will wait until they are sold because I cannot move away from this libraries that I'm using and you wait until they're solved and the other way you wait until their souls as well. It's just now you have more words associated with it.
+
+00:05:15 - Michael:
+
+Yeah, I agree with that part. But the first thing in Security in risks, let's say security risk.
+
+00:05:22 - You:
+
+Is understanding them.
+
+00:05:23 - Michael:
+
+always identification and understanding, so if you're you're
+
+00:05:25 - You:
+
+totally
+
+00:05:27 - Michael:
+
+So if you're you're now, oh, that's a problem. Then you can tackle that.
+
+00:05:30 - You:
+
+That's true.
+
+00:05:31 - Michael:
+
+So it's with Supply chains. Also the same let's say you can just ignore everything and or you know about them, but the thing is you also need to do something about it and now
+
+00:05:42 - You:
+
+Yeah.
+
+00:05:42 - Michael:
+
+call problem like many organizations in the docker field and your field. your field. Are trying creating their own wheel? For solving that problem in Docker images. So the first problem was transparency coverage. We do not have a full coverage. The second problem is there's so many CVS in the base image.
+
+00:06:04 - You:
+
+Yeah. That even suppliers don't want to fix that. They don't take the third time to fix that issue. so so you're bringing something inside and It's it can let's say it can have thousand criticals in it with that
+
+00:06:20 - You:
+
+No.
+
+00:06:21 - Michael:
+
+the supplier focusing on that why because supplier always focusing on functionality above security.
+
+00:06:29 - You:
+
+totally
+
+00:06:30 - Michael:
+
+And yeah, of course an organization organization can say that. Oh, yeah, it's the supplier fault. So we will wait on the supplier. But otherwise, let's say we have a concept of security called zero trust.
+
+00:06:46 - You:
+
+Of course.
+
+00:06:47 - Michael:
+
+Do not trust but verify always. check always control and not only in the open source field, but also for the suppliers why because
+
+00:06:57 - You:
+
+Of course.
+
+00:06:58 - Michael:
+
+the most recent
+
+00:06:59 - You:
+
+I mean, I I totally agree with what you're saying and the key question that I always have insecurities, you know, like Because I see this problems. Like there are a lot of supply chain attacks. Like you can even just make it specific to specific like just in typescript just with node. You have a million of dependencies and you're gonna have so many vulnerabilities you are not going to be able to like listen, but
+
+00:07:29 - Michael:
+
+Yes.
+
+00:07:30 - You:
+
+the thing is once you have this how has this helped you, you know, like in my mind this has negatively helped you somehow because now you have more things to worry about not less.
+
+00:07:42 - Michael:
+
+Got the thing is if with security the problem with security, let's say that it is not really you do not get functionality as in what the end user expects.
+
+00:07:53 - You:
+
+Mm-hmm.
+
+00:07:54 - Michael:
+
+Oh, yeah. See, let's say if you hard on something or you you force compliancy in a environment yet. And you should also does not really care because they want the functionality they do not care. But when when something bad happens, then it will of course so the value
+
+00:08:10 - You:
+
+Take care.
+
+00:08:13 - Michael:
+
+is not Immediately seen it's more like what does it prevent eventually? So what what really are there?
+
+00:08:21 - You:
+
+Of course.
+
+00:08:24 - Michael:
+
+The thing is also with this problem. So let's say a company has. Wants to make their environment more secure. So they have this problem what you say like thousand CVS, they know everything what can they do about it? So now we come to a solution. So but first we need to see it as a problem.
+
+00:08:43 - You:
+
+Mm-hmm.
+
+00:08:43 - Michael:
+
+And what are the risk associated with let's say without 100% coverage. There are some risk. Let's say some work someone can download malware very easy. Hart me for checking also their I I recently saw by with the company supply chain. And what else I was that every developer had a Docker host. and and what problem was they could pull every image from the internet from local hope with the registry of course, but intermediate receipt but intermed Like Nexus, but still they can pull everything what they want. They do only treaty scan. And they like the vulnerability Scan they get only 20% coverage or something like that and they made the Assumption was oh it is safe. So we are doing already very good. Now comes the fun part. I made an image a custom image with icar test virus. And to show them proof like you can now download very easy malware without. Any control in the and upper Scout
+
+00:09:50 - You:
+
+No. totally
+
+00:09:53 - Michael:
+
+also not from registry. No, you can very easily bypass those parts. So also rents also other other stuff.
+
+00:10:00 - You:
+
+totally
+
+00:10:02 - Michael:
+
+What's you can think about? So that's the risk is you can pull something inside. Yeah.
+
+00:10:09 - You:
+
+mmm
+
+00:10:10 - Michael:
+
+That inside that the questions what can you pull them? Yeah, you can pull everything.
+
+00:10:14 - You:
+
+Anything everything?
+
+00:10:16 - Michael:
+
+everything you can pull everything so so it's very
+
+00:10:20 - You:
+
+In the end you're running these inside of your production environment. So like
+
+00:10:25 - Michael:
+
+Yes, the fun part was that I could easily deploy also that virus image.
+
+00:10:30 - You:
+
+hmm
+
+00:10:31 - Michael:
+
+Let's say I can create a a holy pot image that looks like a working application image.
+
+00:10:40 - You:
+
+Of course and collects all the data.
+
+00:10:41 - Michael:
+
+also at the Yeah. Yeah, but I can also add a virus to it and but it actually so from a developer perspective or end user or how you operations engineer perspect.
+
+00:10:52 - You:
+
+hmm
+
+00:10:55 - Michael:
+
+perspective. Oh you can pull it because it it's also problem for us. And they can deploy to production also because there's nothing in the workflow in the process that blocks. those that and now from part like the
+
+00:11:10 - You:
+
+Yeah.
+
+00:11:13 - Michael:
+
+origin organization by so much money for security. for every other field so workspaces like fire scanning for
+
+00:11:20 - You:
+
+mmm
+
+00:11:25 - Michael:
+
+Many fields like for firewall or for segmentation. And but this field it's completely like there's not this field the
+
+00:11:34 - You:
+
+the Wild West
+
+00:11:36 - Michael:
+
+problem is not
+
+00:11:38 - You:
+
+understood yet
+
+00:11:39 - Michael:
+
+Understood yet. Yes, very good. And that's that's the problem first problem like like Why are we doing so much money for every other field like to make it so secure and then we have like the
+
+00:11:53 - You:
+
+a big Open Door
+
+00:11:53 - Michael:
+
+four. Yeah, yeah or back door open for everyone or from their open for everyone. So it's a very yeah now I don't do not want to say stupid of course, but it's not smart.
+
+00:12:05 - You:
+
+It is. Mm-hmm.
+
+00:12:07 - Michael:
+
+Why are you putting so many vaults in place and open a big world for everyone that can use that? So that's the problem. How do you solve it now now comes the part organizations try to solve this issue themselves, and they do a very bad job at least at the organization where I worked.
+
+00:12:30 - You:
+
+Mm-hmm.
+
+00:12:31 - Michael:
+
+Like they let's say they use Alpine base images instead of devium to to make a minimal footprint. Yeah. Okay yourself something but not The will risk because you still have a big risk. You can help an image. You can also bypass package man. You're very easy with copy statements. So I'm a big follower of chianguard. I love their philosophy. about this part also so concept comes to my mind and I will and that is What if we have a company in Europe? that Has a service model for this use case like secure images security as a service. So instead of every company trying to solve this issue themself. They can also like pay another company to to deliver them those base images with fully compliency fully fully secure. Let's say zero CV images.
+
+00:13:37 - You:
+
+right, but if there is a CV in the library that they want to use
+
+00:13:43 - Michael:
+
+And the thing is most cve's like there are some CVS in the base. There are CVS in the image and they are CVS in the dependencies.
+
+00:13:53 - You:
+
+Yes.
+
+00:13:53 - Michael:
+
+So we of course we need to make a separation of those. So now we the thing is the the challenge they now have is mostly on the underlaying layer that there are so many open doors in the underlaying layer lock.
+
+00:14:07 - You:
+
+underlying
+
+00:14:09 - Michael:
+
+In the base image layer so not on the spec. So so the focus is on that part. Of course, we can also do focus on the dependency part, but I see first the image part because I see that that's a very big challenge for organizations for the dependency part. Yeah, if they an organization should like use a good software composition analysis tool and also like
+
+00:14:38 - You:
+
+Okay, so do I get that do I get that
+
+00:14:39 - Michael:
+
+truck
+
+00:14:41 - You:
+
+correctly that for you would think is more? Important are the base layer CVS. So the ones that are in Debian in Alpine in all of these in
+
+00:14:54 - Michael:
+
+Basically, yes, and also not only TVs but the coverage because how do you know if if you're you pull the image? That it's safe that it's covered correctly like in how do you know if you scan it hundred percent? Because you can bypass the package manager very easily. And let's say you you can now scan image on the internet from Debian. And you will see their star holder CVS in it.
+
+00:15:24 - You:
+
+Yeah.
+
+00:15:24 - Michael:
+
+And also serious like and you can also do the same on something else and you see there one, but the functionality is the same. so now
+
+00:15:35 - You:
+
+Mmm, can I ask you something here?
+
+00:15:38 - Michael:
+
+Yeah.
+
+00:15:42 - You:
+
+Why doesn't this exist because I assume like for example, I just know from AWS if you want to upload something to a kubernetes cluster there, you have to upload it to the ECR and I assume there are some Security checks there that happen on.
+
+00:15:59 - Michael:
+
+the
+
+00:16:00 - You:
+
+I don't know. I'm just
+
+00:16:02 - Michael:
+
+They do what the problem that I have described. There are there is a solution. There are two companies not one company. That has a solution for this. It's the company chain got what I used. But but anyway AWS Google every big company Do do a very basic scanning. They do not comprehensive scanning. They do not check the coverage. They do not check. Hey is everything done by the package manager? They only scan the basic privy scan or graph scan mostly. So that really have this challenges.
+
+00:16:36 - You:
+
+Yeah.
+
+00:16:38 - Michael:
+
+also, but that's why they have a shared responsibility more of course for this part because if a customer
+
+00:16:44 - You:
+
+Yeah.
+
+00:16:45 - Michael:
+
+let's say pulls a virus image with the virus then it's not their responsibility. Is the possibility of the customer?
+
+00:16:54 - You:
+
+Of course.
+
+00:16:55 - Michael:
+
+so so that's that's the problem because they Do not reach scan it. Like let's say they have their integrated registry. There's also go Harbor. garbers also registry open source, but from VMware But it has also integrated scanning with trivia. And the results if images being pulled with go Harbor it will automatically scan it like the security check. but it's not trustworthy why because Why? It only scans the package manager. So you have layer Gap that we do not.
+
+00:17:29 - You:
+
+hmm
+
+00:17:31 - Michael:
+
+know what's in in there. So the this model is not new, but it does not exist in Europe yet. So America it exists in US it exists the secure images as a servers. So chain guard is one of the biggest security kubernetes security companies. They are also.
+
+00:17:51 - You:
+
+I mean as a European company, I can also just use checkout. No.
+
+00:17:57 - Michael:
+
+And there are some how do you say it's notes for that? I'll say I think their data less time I checked it was in in Us stores stored in us. So if you want apply to gpdr you have
+
+00:18:09 - You:
+
+right
+
+00:18:12 - Michael:
+
+problem.
+
+00:18:13 - You:
+
+Hmm.
+
+00:18:14 - Michael:
+
+so
+
+00:18:14 - You:
+
+I couldn't they just open up an AWS region in Europe and to it from
+
+00:18:18 - Michael:
+
+take
+
+00:18:18 - You:
+
+there?
+
+00:18:19 - Michael:
+
+They can but they are not doing it. I don't know why there's probably a use case for that or they are still growing in that field. But it's also like it's one Contender. Let's say Your Azure you have obvious you have Google like three big companies contending with each other. So I think another company.
+
+00:18:39 - You:
+
+Of course. another solution a chain guard competitor would be something that's
+
+00:18:47 - Michael:
+
+Very good and also your specified because the government in year Europe in the Netherlands, at least they are very very strict with what they use. So if you you can't say to them use Gengar, they will not use it.
+
+00:19:01 - You:
+
+mmm
+
+00:19:01 - Michael:
+
+Well say no we rather do the dry method and use the company outside of the Netherlands. Well Microsoft has exemption, of course because you know pockets and So that's the use case a big problem. That really does not get the attention that it should get. and there's a good solution also for that of course and that is using Of course. images that Only allow using the package manager for adding something to it to have a consistency and also this rulers concept. So there are many opens. There's also open source tools. The chain guard has open sourced. Ideal ideally used for that. So the secure images serves what does itself it solves the problem that companies do not need to create their own. images
+
+00:20:02 - You:
+
+Yeah.
+
+00:20:02 - Michael:
+
+also Supplier images because it's not like it's not limited to only tempering Java or golang or something else. No, it's It can be broader. So if you do not trust a specific supplier, like open source supplier, of course because otherwise, why are you paying for some Supply? Yeah, then you can use the secure images as a server feature.
+
+00:20:31 - You:
+
+Yeah, that makes sense.
+
+00:20:33 - Michael:
+
+yeah, it's a problem but it's not it does not get the attention if it deserves if you ask me and Because you can put everything in it. And yeah.
+
+00:20:43 - You:
+
+mmm
+
+00:20:45 - Michael:
+
+I can easily I've also demonstrated it. I gave a presentation like three months ago about this. Demonstrated it also like how easy it is to bypass every scanner in an environment in the production of Art.
+
+00:21:02 - You:
+
+Yeah.
+
+00:21:03 - Michael:
+
+And you have now like twenty eight twenty percent of every image in Docker herb has malware in it. And not only dockerhub but also also other registries, of course so due to give let's say a full permission for to for everyone to pull from Registries like dockerhope or other places. It's a bit the risk are very big if you ask me. So that's the problem.
+
+00:21:33 - You:
+
+That's fair.
+
+00:21:36 - Michael:
+
+I think it can be a good solution. These cases is there but there's
+
+00:21:40 - You:
+
+M.
+
+00:21:43 - Michael:
+
+still a work in progress. I will also I've also meeting upcoming Friday with someone else. That we will also discuss this part and I will also demonstrate it to him in real life. I mean
+
+00:22:00 - You:
+
+Yeah. Yeah, I'm just gonna rephrase the whole discussion that we just had so
+
+00:22:05 - Michael:
+
+Yeah.
+
+00:22:05 - You:
+
+So basically the problem that you're talking about is that you can hidden cve's in Docker images and
+
+00:22:13 - Michael:
+
+Of course.
+
+00:22:15 - You:
+
+yeah viruses basically 20% of all
+
+00:22:16 - Michael:
+
+far more
+
+00:22:21 - You:
+
+Images on Docker Hub have viruses inside of them basically today.
+
+00:22:25 - Michael:
+
+Yeah.
+
+00:22:27 - You:
+
+There's only superficial scans that are done with vulnerability scanners. And so this allows for many issues to come not only on the application Level, but also already on the base OS level you get a lot of vulnerab.
+
+00:22:47 - Michael:
+
+Yeah.
+
+00:22:49 - You:
+
+vulnerabilities that they can that then can be exploited and it's very easy to circumvent these open source scanners like Trevi and so basically if you're malicious you will hide it just a tiny bit better and it will not be picked up.
+
+00:23:07 - Michael:
+
+Yeah, exactly.
+
+00:23:08 - You:
+
+And the question there is why isn't there a thing that is doing? kind of secure Docker images as a service where you can basically like put your Docker image Hub and just like an antivirus it tells you oh it has Oh these things inside of it that
+
+00:23:31 - Michael:
+
+Oh otherwise, and because when I have it in thoughts secure images servers, it's not really using existing images in the registry. No, it's converting an image to a new image with with CVS and
+
+00:23:45 - You:
+
+hmm So it's taking the image that you want to use and transforming that into a zero CV image.
+
+00:23:53 - Michael:
+
+and yes, yes with with the whole depression coverage where you can Where you
+
+00:23:57 - You:
+
+how How do they do that? How do you turn an image that has
+
+00:24:01 - Michael:
+
+put
+
+00:24:05 - You:
+
+into an image? That doesn't?
+
+00:24:07 - Michael:
+
+Very easy, because most let's say most applications use clip C. or muscle library for interacting with kernel You can very easily use now all the concept. The concept is easy, but you can use this relish concept. Which which means you don't have anything in your image, except that that you really need in your image. So let's say you should Debian or Alpine or something else. You you run your application on it your Java application or your go Application you get like 99% overhead If you know what I mean because your application only needs that one person. They do not need that 99% of over it and most of the CVS are in that 99% of
+
+00:25:05 - You:
+
+Right. So what you will basically do is you will in your application kind of or through the application you will know which kind of Kernel operations it needs and
+
+00:25:19 - Michael:
+
+Yeah, libraries dependencies on so the Java yava needs example of java yava needs Etsy password. They file it needs because it needs a user it needs Lipsy. Because it needs to interact and that's it and Java yava runtime engine enter package manager calls. You need to do everything in the package manager. But so four five components only for you.
+
+00:25:51 - You:
+
+right and basically all the rest you just remove of the image
+
+00:25:58 - Michael:
+
+Yeah, it's it's otherwise you start with the concept that if in my mind that chingard's also use that concept is you start with the completely empty image.
+
+00:26:09 - You:
+
+you
+
+00:26:10 - Michael:
+
+Complete empty nothing in it. So as something like a scratch image. that's you install the dependencies on it from Let's say Alpine or Debian. And the package manager and you force everything through the package manager. So if you have like a Java application or Because you the package manager guarantee that you have a fully coverage of everything that you have done. So if you use a trivia scan, you will not only scan 20% anymore. You will skin 100% your s balls.
+
+00:26:49 - You:
+
+so basically instead of doing a copy you will force that through the
+
+00:26:57 - Michael:
+
+Yes.
+
+00:26:57 - You:
+
+the
+
+00:26:59 - Michael:
+
+Yeah, because why because otherwise you will not have a fully covered coverage. You will only have a percent cover.
+
+00:27:05 - You:
+
+Yes.
+
+00:27:06 - Michael:
+
+or something like that or you don't not even know what coverage is so it can also be one person.
+
+00:27:13 - You:
+
+hmm But
+
+00:27:13 - Michael:
+
+the problem
+
+00:27:16 - You:
+
+mm-hmm, and that reduces the vulnerabilities because
+
+00:27:20 - Michael:
+
+The package manager does not use there are two use cases. There's a use case you want a fully coverage. So you want to to guarantee?
+
+00:27:29 - You:
+
+So the fully I understand how this increases the coverage.
+
+00:27:33 - Michael:
+
+So yes, that's the coverage part and this CVS decreases because you use a minimal image. So this relish image concept. so you because The example I gave I gave earlier is with Java if you use Java now, let's take them around 17 from Docker up. You will get like a three-hundred or 250 300mb megabyte image. With Java and you only need Java, of course. but but it has so much stuff in it that you do not need it as a and and
+
+00:28:12 - You:
+
+Mm-hmm.
+
+00:28:14 - Michael:
+
+hidden stuff also. But also that stuff that the supplier does not care they want to they focus on functionality. So let's add just at this because it already works. We don't care if Because we focus on functionality not on security. So you can also do the same with the modern but with five dependencies, so let's say you have the moving image.
+
+00:28:38 - You:
+
+right
+
+00:28:39 - Michael:
+
+on the internet that has 300 dependencies, but you actually only
+
+00:28:42 - You:
+
+And you know, which one which five
+
+00:28:43 - Michael:
+
+need five.
+
+00:28:48 - You:
+
+need? Because that's inside. the that's defined inside the program or
+
+00:28:56 - Michael:
+
+It's on the internet. You can use many references for that. So Java users. Ldd you have a command line actually can check. like
+
+00:29:07 - You:
+
+I'm just thinking, you know, is there an automated way because I might be
+
+00:29:10 - Michael:
+
+Yeah.
+
+00:29:10 - You:
+
+using Java. I might be using python that might be using something else.
+
+00:29:15 - Michael:
+
+Of course, there's automobile but it needs building it needs time for that. Of course. It's not ready now, but you can create a pipeline that As like a subscription model like you you define in camel format or something like that for wait you just from the internet do I?
+
+00:29:31 - You:
+
+that
+
+00:29:32 - Michael:
+
+Do I want to convert?
+
+00:29:33 - You:
+
+Onally what it does is it makes it zero trust in the sense that it says
+
+00:29:39 - Michael:
+
+Yeah.
+
+00:29:39 - You:
+
+all the permissions that are not used all the programs that are not used. We remove them and we just created so so I'm gonna rephrase what the idea that you just Mentioned and I'm going to rephrase it in my own words.
+
+00:29:55 - Michael:
+
+Yeah.
+
+00:29:56 - You:
+
+And so there are lots of vulnerabilities in Docker Hub images to remediate this. We want two things. We want to add coverage and we want to remove vulnerabilities. To do this. We will first only install the dependencies that we need. And no dependency that is not needed. That is not. And the second thing is that we're going to install all of these dependencies through the package manager. which means that we're not going to That we're going to get a higher coverage when using these traffic checks.
+
+00:30:43 - Michael:
+
+software bill of material. That's also like forced through the US government like in 2020. I think as a way to mitigate supply chain risks, but the problem is with asthma is the same as is all the scanning tools the early check the package manager. So the coverage is not also for it as bombs.
+
+00:31:06 - You:
+
+right
+
+00:31:06 - Michael:
+
+So that we have fully trusted the solution will only trust it image and solution.
+
+00:31:14 - You:
+
+That makes sense. Um, so basically it's to reduce your software develop material or to make it more accurate and to to increase
+
+00:31:22 - Michael:
+
+Yeah accurate.
+
+00:31:27 - You:
+
+the the amount of cve tract.
+
+00:31:31 - Michael:
+
+Yeah, yeah, exactly. And the thing is it's very you cannot like go from 200 300 CVS to zero series with the same application with the same version also. So that's the how to say to a very
+
+00:31:47 - You:
+
+hmm
+
+00:31:50 - Michael:
+
+good solution to decrease the organization CVS together worldly. And you have a guarantee that you do not. Pull something that is not good.
+
+00:32:02 - You:
+
+Right, and so basically the the step and and basically it would be quite simple to implement as well. Basically you will just instead of
+
+00:32:10 - Michael:
+
+Yeah.
+
+00:32:13 - You:
+
+saying Docker image dot XYZ you Docker image Dot Chain guard or dots whatever ink drop or whatever and it's it's just gonna
+
+00:32:24 - Michael:
+
+our question
+
+00:32:26 - You:
+
+recreate these images for you as you
+
+00:32:29 - Michael:
+
+There are many ways of Licensing.
+
+00:32:30 - You:
+
+request them.
+
+00:32:32 - Michael:
+
+like like let's say you can also What I have in mind is to sell a architect for specific customers. So let's say you have an image attack. So that is one if you use that then it's it's your artifact and then it the licensing will be on on that part. Like let's say the artifacts that you use you will pay for that. As a customer, of course.
+
+00:32:58 - You:
+
+so basically per image that you use
+
+00:33:01 - Michael:
+
+Yeah, yeah, very image Tech indeed. Yeah. and there's also another thing but it's for the future because
+
+00:33:11 - You:
+
+This is interesting cool. So and by the way, can you just walk me through what percentage of this idea does chingard to?
+
+00:33:23 - Michael:
+
+Shin guards just a very big percentage of this idea. It's only not focused on your Europe.
+
+00:33:30 - You:
+
+Okay, but basically what they already do is they already take all. Your go dream related.
+
+00:33:39 - Michael:
+
+Yeah.
+
+00:33:39 - You:
+
+take the image take only the dependencies that they need and recreate the entire thing using commands.
+
+00:33:48 - Michael:
+
+Yes. Yes exactly. I do not know how their licensing model works. There's just think that I'm part of that could be handy. But they do a very big part. It's from them that I get this these ideas. It's not something that I have
+
+00:34:04 - You:
+
+Okay. created, but I just see a big shade opportunity in Europe especially and as a contender, of course because they use it in a certain way. certain way. And it does not need to be on the same way as stand like one-on-one copy. That's not good if you ask me no because I have also some other ideas because not only let's say using For for the docker images part but also creating like in the Dutch. They say austrat. It's a cleaning Street in directly translated. So like like a some kind of proxy or not really proxy, but the service that teams organization can also use to retreat everything from it that
+
+00:34:55 - You:
+
+Mm-hmm.
+
+00:34:57 - Michael:
+
+does all the scanning on the correct way like create a risk profile for for the things that they pull inside. Can also be from documents let's say they do not want to use the secure images service that can also use them to to risk profile service that what you pull through. It will give like a report something like that not only of CVS but also Not only of C. Like the coverage like how what are you scanning now? You can 20% or 80% What is
+
+00:35:31 - You:
+
+totally and and what I'm thinking
+
+00:35:31 - Michael:
+
+yeah, so
+
+00:35:33 - You:
+
+here, and I'm just thinking this out loud, right, but actually the way
+
+00:35:37 - Michael:
+
+Yeah.
+
+00:35:39 - You:
+
+I see a way to disrupt this company chain guard chain guard if I understand this correctly prices for that solution. And makes money from that.
+
+00:35:51 - Michael:
+
+Yeah, very big company in America.
+
+00:35:54 - You:
+
+But what I'm wondering right is I think there could be an open source or an open core version of this.
+
+00:36:01 - Michael:
+
+That they source.
+
+00:36:04 - You:
+
+There are open source.
+
+00:36:04 - Michael:
+
+Yeah, but it's not it's some parts only some parts, but the concept is very easy. So the translation of this is also pretty easy
+
+00:36:16 - You:
+
+now clue
+
+00:36:17 - Michael:
+
+Yeah.
+
+00:36:19 - You:
+
+Thank you.
+
+00:36:19 - Michael:
+
+It's interesting. Yeah.
+
+00:36:22 - You:
+
+I might come back to you with a bit more details. Maybe if if we decide to go into that direction. Yeah, maybe.
+
+00:36:36 - Michael:
+
+I will also going to talk with the someone. I know. Friday so we will also be converting. His application business application that he also sells to zero cve image format. So it's something that it's less like a healthier already in my mind.
+
+00:37:00 - You:
+
+Yeah.
+
+00:37:00 - Michael:
+
+Just one especially looking for the startup startup is always the hardest part. Well, of course not only started but
+
+00:37:09 - You:
+
+that
+
+00:37:10 - Michael:
+
+Yeah, so the process like the marketing also. There are many challenges but I think I don't know.
+
+00:37:19 - You:
+
+hmm
+
+00:37:21 - Michael:
+
+I've some company many companies now and I see everyone creating their own way of Base images and they're all doing it in my opinion the wrong way.
+
+00:37:30 - You:
+
+Wrong, yeah.
+
+00:37:32 - Michael:
+
+yeah, because
+
+00:37:32 - You:
+
+Yeah. No that makes sense.
+
+00:37:33 - Michael:
+
+Like the example that let's use Alpine because we're safer, but we
+
+00:37:37 - You:
+
+No.
+
+00:37:38 - Michael:
+
+don't what we're doing because we don't know what we're scanning. What are scanning? 20% only we're safer now because we scan the 20% of a base image from the internet.
+
+00:37:50 - You:
+
+mmm
+
+00:37:51 - Michael:
+
+So yeah.
+
+00:37:52 - You:
+
+That makes a lot of sense. cool
+
+00:37:57 - Michael:
+
+So cool. Okay another nice me.
+
+00:37:59 - You:
+
+Thank you, Michael.
+
+00:38:00 - Michael:
+
+Yes, of course. You're welcome. Nice day.
+
+00:38:04 - You:
+
+Yeah. Bye. All right, bye-bye.
+
+00:38:06 - Michael:
+
+right
