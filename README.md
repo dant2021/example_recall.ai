@@ -2,7 +2,9 @@
 
 ## Overview
 
-This project is a Meeting Summary Generator that works with the Recall.ai Universal API for Meeting Bots. It takes meeting transcripts, summarizes them, and retains the link between the summarized text and the original transcript. The summarized data is structured for easy storage in a non-relational database like Firebase, allowing for fast and flexible retrieval in user applications.
+This project is a Meeting Summary Generator that works with the Recall.ai Universal API for Meeting Bots. 
+
+It takes meeting transcripts, summarizes them, and retains the link between the summarized text and the original transcript. The summarized data is structured for easy storage in a non-relational database like Firebase, allowing for fast and flexible retrieval in user applications.
 
 ## Features
 
