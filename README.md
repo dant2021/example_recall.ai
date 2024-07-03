@@ -24,13 +24,14 @@ This project is a Meeting Summary Generator that works with the Recall.ai Univer
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/meeting-summary-generator.git
+   git clone https://github.com/dant2021/meeting-summary-generator.git
    cd meeting-summary-generator
    ```
 
 2. Install the required packages:
    ```
-   pip install openai requests
+   pip install openai
+   pip install requests
    ```
 
 3. Set up your OpenAI API key:
@@ -67,7 +68,6 @@ The output JSON file contains an array of "connected blocks", each representing 
 - Implement direct integration with Recall.ai API for real-time transcript processing
 - Add Firebase integration for database storage and retrieval
 - Implement more robust error handling and retrying for failed API requests
-- Add unit tests to ensure reliability of summarization and connection processes
 - Create a user interface for easier interaction with the summarization tool
 
 ## Contributing
